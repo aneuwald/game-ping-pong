@@ -1,25 +1,31 @@
 const WIDTH = 500;
 const HEIGHT = 800;
 
-let ball;
-let ball2;
-let ball3;
-let ball4;
+const NUM_BALLS = 100;
+
+const balls = [];
 
 function setup() {
     createCanvas(HEIGHT, WIDTH);
 
-    ball = new Ball(100, 100, 50, 5);
-    ball2 = new Ball(100, 700, 20, 10);
-    ball3 = new Ball(300, 500, 15, 5 )
-    ball4 = new Ball(200, 400, 150, 5)
+    for (let i = 0; i < NUM_BALLS; i++) {
+        const x = random(HEIGHT);
+        const y = random(WIDTH);
+        const size = random(10, 100);
+        const velocity = random(2, 15);
+        const cor = color(random(255), random(255), random(255));
+
+        const newBall = new Ball(x, y, size, velocity, i, cor);
+
+        balls.push(newBall);
+    }
 }
 
 function draw() {
     background(200);
-    ball.update();
-    ball2.update();
-    ball3.update();
-    ball4.update();	
+
+    for (let i = 0; i < NUM_BALLS; i++) {
+        balls[i].update();
+    }
 }
 
