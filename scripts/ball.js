@@ -38,5 +38,8 @@ class Ball {
         this.y += this.velY;
 
         ellipse(this.y, this.x, this.size);
+        textSize(this.size)
+        textAlign(CENTER)
+        text('alex', this.y, this.x)
     }
 }
