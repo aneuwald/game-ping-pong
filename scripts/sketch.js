@@ -1,5 +1,5 @@
-const WIDTH = 500;
-const HEIGHT = 800;
+const WIDTH = 900;
+const HEIGHT = 1600;
 
 const NUM_BALLS = 100;
 
