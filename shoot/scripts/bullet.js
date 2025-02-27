@@ -18,16 +18,16 @@ class Bullet extends Ball {
 
     checkBounds() {
         const halfSize = this.size / 2;
-        if (this.x < halfSize || this.x > width - halfSize || this.y < halfSize || this.y > height - halfSize) {
+        if (this.x < halfSize || this.x > width - this.size || this.y < this.size || this.y > height - this.size) {
             const index = BULLETS.indexOf(this);
             if (index > -1) {
+                // Barulho da bala batendo
                 if (SOUNDS.hit) {
                     SOUNDS.hit.play();
                 }
                  // Remove a bala do array
                 BULLETS.splice(index, 1);
 
-                // Barulho da bala batendo
             }
         }
     }
